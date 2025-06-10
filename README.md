@@ -157,8 +157,40 @@ install.packages("Seurat")
 install.packages("reticulate")
 ```
 
+## 🧬 TCGA Data Analysis — R Package Installation
+```R
+# 📌 Install Bioconductor manager
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
 
+BiocManager::install(c(
+  "TCGAbiolinks",         # Download/query TCGA data from GDC
+  "SummarizedExperiment", # Data structure used in TCGAbiolinks
+  "BiocGenerics",
+  "GenomicDataCommons",   # Interface to NCI GDC API
+  "maftools",             # Somatic mutation analysis and visualization (MAF files)
+  "DESeq2",               # Differential expression
+  "limma",                # Linear modeling
+  "edgeR",                # Count-based DE
+  "clusterProfiler",      # Enrichment analysis
+  "org.Hs.eg.db",         # Human gene annotation
+  "ComplexHeatmap",       # Rich heatmaps
+  "ggplot2",              # Visualization
+  "survival",             # Survival models
+  "survminer"             # Survival plot wrapper
+))
 
+# 📦 Optional Packages for Additional Features
+BiocManager::install(c(
+  "GSVA",                 # Gene Set Variation Analysis
+  "pathview",             # KEGG pathway visualization
+  "EnhancedVolcano",      # Volcano plots
+  "AnnotationDbi",        # Annotation support
+  "GSEABase",             # GSEA foundation
+  "biomaRt",              # Interface with Ensembl annotations
+  "sva"                   # Batch correction (e.g., ComBat)
+))
+```
 
 
 
