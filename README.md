@@ -96,6 +96,67 @@ BiocManager::install(c(
   "arrayQualityMetrics" # Quality control reports
 ))
 ```
+## 🧪 Single-Cell RNA-seq Analysis – Package Installation
+```R
+# 📌 Install Bioconductor manager if needed
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+# 🧱 Core single-cell infrastructure
+BiocManager::install(c(
+  "SingleCellExperiment",   # Core data container
+  "scater",                 # QC and visualization
+  "scran",                  # Normalization
+  "scuttle",                # Utilities for scRNA-seq
+  "DropletUtils"            # Empty droplet detection for 10x
+))
+
+# 🔬 DE and Pseudobulk analysis
+BiocManager::install(c(
+  "DESeq2",                 # Pseudobulk DE analysis
+  "edgeR", "limma",         # Additional DE tools
+  "MAST"                    # Single-cell DE
+))
+
+# 🧠 Annotation & reference data
+BiocManager::install(c(
+  "biomaRt", "AnnotationDbi", "org.Hs.eg.db",  # Annotation
+  "SingleR", "celldex"                         # Cell type annotation
+))
+
+# 🔁 Batch correction & integration
+BiocManager::install(c(
+  "batchelor",    # FastMNN batch correction
+  "harmony"       # Harmony integration (can use with Seurat)
+))
+
+# 📊 Dimensionality reduction & visualization
+BiocManager::install(c(
+  "uwot",         # UMAP
+  "Rtsne",        # t-SNE
+  "ComplexHeatmap",
+  "pheatmap",
+  "RColorBrewer"
+))
+
+# 🚀 Trajectory inference
+BiocManager::install(c(
+  "monocle3", "slingshot"
+))
+
+# 📥 File format & conversion
+BiocManager::install(c(
+  "zellkonverter",  # For HDF5 and AnnData interop
+  "scRNAseq"        # Benchmark single-cell datasets
+))
+
+# 🧪 Install Seurat (CRAN)
+install.packages("Seurat")
+
+# 🧠 Optional: Bridge to Python tools like Scanpy
+install.packages("reticulate")
+```
+
 
 
 
