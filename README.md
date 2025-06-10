@@ -45,5 +45,60 @@ install.packages(c(
 ))
 ```
 
+## 🧬 Bulk RNA-seq Analysis Package Installation
+```R
+# 📌 Install Bioconductor manager if not already available
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+# 📦 Core differential expression packages
+BiocManager::install(c(
+  "DESeq2",         # Differential expression via negative binomial
+  "edgeR",          # Differential expression using empirical Bayes
+  "limma",          # Linear modeling and voom transformation
+  "apeglm"          # Shrinkage estimator for log fold changes (used with DESeq2)
+))
+
+# 📥 Transcript/Gene-level data import
+BiocManager::install(c(
+  "tximport",       # Import transcript-level quantifications
+  "tximeta"         # Extension of tximport with metadata tracking
+))
+
+# 🧬 Annotation and metadata
+BiocManager::install(c(
+  "biomaRt",        # Interface to Ensembl biomart databases
+  "AnnotationDbi",  # Base class for annotation packages
+  "org.Hs.eg.db",   # Human gene annotation (use org.Mm.eg.db for mouse, etc.)
+  "GenomicFeatures",# Generate TxDb objects
+  "ensembldb"       # Manage Ensembl-based annotations
+))
+
+# 📊 Visualization and summary
+BiocManager::install(c(
+  "pheatmap",         # Heatmaps
+  "ComplexHeatmap",   # Advanced heatmaps
+  "EnhancedVolcano",  # Volcano plots for DE results
+))
+
+# 📈 Functional analysis
+BiocManager::install(c(
+  "clusterProfiler",  # Enrichment and pathway analysis
+  "pathview",         # KEGG pathway mapping
+  "fgsea",            # Fast GSEA
+  "GSEABase",         # Base support for GSEA
+  "GSVA"              # Gene set variation analysis
+))
+
+# 🧪 Batch correction and quality control
+BiocManager::install(c(
+  "sva",              # Surrogate variable analysis for batch effect removal
+  "arrayQualityMetrics" # Quality control reports
+))
+```
+
+
+
+
 
 
